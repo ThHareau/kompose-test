@@ -32,7 +32,7 @@ impossible.cookie (user1) and possible.cookie (user) you want to use.
 ## The wrk_tput.sh script
 
 ```bash 
-./wrk_tput.sh <MANAGER> <CLUSTER_MANAGER> <URL_FILE> <COOKIE_FILE> [throughput file] 
+./wrk_tput.sh <MANAGER> <CLUSTER_MANAGER> <COOKIE_FILE> [throughput file] 
 ``` 
 
 * MANAGER is the machine from which all the requests will be launched. Do not use a machine already in use by the cluster.  
