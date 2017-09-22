@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose -o kompose-manifest convert
+    kompose.service.type: NodePort
+    kompose.version: 1.2.0 (99f88ef)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: edge-router
+  name: edge-router
+spec:
+  ports:
+  - name: "80"
+    port: 80
+    targetPort: 80
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
+  selector:
+    io.kompose.service: edge-router
+  type: NodePort
+status:
+  loadBalancer: {}

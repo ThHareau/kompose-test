@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -o kompose-manifest convert
+    kompose.version: 1.2.0 (99f88ef)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: catalogue
+  name: catalogue
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: catalogue
+    spec:
+      containers:
+      - image: weaveworksdemos/catalogue
+        name: catalogue
+        resources: {}
+        securityContext:
+          capabilities:
+            add:
+            - NET_BIND_SERVICE
+            drop:
+            - all
+      restartPolicy: Always
+status: {}

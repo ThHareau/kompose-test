@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -o kompose-manifest convert
+    kompose.version: 1.2.0 (99f88ef)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: user
+  name: user
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: user
+    spec:
+      containers:
+      - env:
+        - name: MONGO_HOST
+          value: user-db:27017
+        image: weaveworksdemos/user
+        name: user
+        resources: {}
+        securityContext:
+          capabilities:
+            add:
+            - NET_BIND_SERVICE
+            drop:
+            - all
+      restartPolicy: Always
+status: {}

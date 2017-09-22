@@ -1,0 +1,46 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -o kompose-manifest convert
+    kompose.service.type: NodePort
+    kompose.version: 1.2.0 (99f88ef)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: edge-router
+  name: edge-router
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: edge-router
+    spec:
+      containers:
+      - image: weaveworksdemos/edge-router
+        name: edge-router
+        ports:
+        - containerPort: 80
+        - containerPort: 8080
+        resources: {}
+        securityContext:
+          capabilities:
+            add:
+            - NET_BIND_SERVICE
+            - CHOWN
+            - SETGID
+            - SETUID
+            - DAC_OVERRIDE
+            drop:
+            - all
+        volumeMounts:
+        - mountPath: /var/run
+          name: edge-router-tmpfs0
+      restartPolicy: Always
+      volumes:
+      - emptyDir:
+          medium: Memory
+        name: edge-router-tmpfs0
+status: {}

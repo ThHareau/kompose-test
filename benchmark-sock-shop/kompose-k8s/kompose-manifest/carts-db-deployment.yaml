@@ -1,0 +1,40 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -o kompose-manifest convert
+    kompose.version: 1.2.0 (99f88ef)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: carts-db
+  name: carts-db
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: carts-db
+    spec:
+      containers:
+      - image: mongo
+        name: carts-db
+        resources: {}
+        securityContext:
+          capabilities:
+            add:
+            - CHOWN
+            - SETGID
+            - SETUID
+            drop:
+            - all
+        volumeMounts:
+        - mountPath: /tmp
+          name: carts-db-tmpfs0
+      restartPolicy: Always
+      volumes:
+      - emptyDir:
+          medium: Memory
+        name: carts-db-tmpfs0
+status: {}
