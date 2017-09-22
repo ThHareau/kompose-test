@@ -1,8 +1,7 @@
 #!/bin/bash
 set -e
 
-attempt=${1:-0}
-
+attempt=${1:-1}
 
 ./stop.sh
 ./start.sh $attempt

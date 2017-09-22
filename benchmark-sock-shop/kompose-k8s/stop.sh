@@ -1,23 +1,20 @@
 #!/bin/bash
 set -e
 
-attempt=${1:-1}
-[ $attempt -ne "0"  ] && [ "$((attempt%10))" -eq "0" ] && csmail send -s "$attempt attempts to stop the cluster" "$attempt attempts to stop the cluster so far, on swarm-master... " "thomashareau@free.fr"
+attempt=${1:-0}
+[ $attempt -ne "0"  ] && [ "$((attempt%10))" -eq "0" ] && csmail send -s "$attempt to stop server so far" "$attempt th attempt to stop server on k8s-master..." "thomashareau@free.fr"
+
+>&2 echo "Attempt $attempt to stop cluster"
 
 
->&2 echo "$attempt attempts to stop cluster"
-
-
-docker stack rm sock-shop 2> /dev/null
+kubectl delete --cascade --ignore-not-found --now -f kompose-manifest 1>&2
 
 retries=0
-stopped=false
-while ! $stopped && [ "$retries" -le "5" ]; do
-	docker stack services sock-shop --format "{{.Replicas}}" 2>/dev/null | grep 0/ > /dev/null  && stopped=false || stopped=true
-	docker network ls 2>/dev/null | grep sock-shop > /dev/null && stopped=false || stopped=true 
-	$stopped || ((++retries))
+deleted=true
+while  ! $deleted  && [ $retries -lt 5 ]; do 
+	[ "$retries" -eq "0" ] || sleep 30
+	[ "`kubectl get all | wc -l`" -le "2" ] && deleted=true || ((++retries))
+	$deleted || >&2 echo "$retries: $pods"
 done
 
-echo "$stopped:$retries"
-
-$stopped || ./stop.sh $((attempt +1))
+$deleted || ./stop.sh $((attempt + 1))
