@@ -13,11 +13,10 @@ docker stack rm sock-shop 2> /dev/null
 retries=0
 stopped=false
 while ! $stopped && [ "$retries" -le "5" ]; do
-	docker stack services sock-shop --format "{{.Replicas}}" 2>/dev/null | grep 0/ > /dev/null  && stopped=false || stopped=true
-	docker network ls 2>/dev/null | grep sock-shop > /dev/null && stopped=false || stopped=true 
-	$stopped || ((++retries))
+	[ "$retries" -gt "0" ] && sleep 10
+	docker stack services sock-shop --format "{{.Replicas}}" 2>/dev/null | grep -v "0/" > /dev/null  && services_stoped=false || services_stoped=true
+	docker network ls 2>/dev/null | grep sock-shop > /dev/null && network_stopped=false || network_stopped=true 
+	$services_stoped && $network_stopped && stopped=true || ((++retries))
 done
-
-echo "$stopped:$retries"
 
 $stopped || ./stop.sh $((attempt +1))

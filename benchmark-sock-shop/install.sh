@@ -19,7 +19,7 @@ function login {
 
 	>&2 echo "> login $resource"
 	res=`ssh -n $MANAGER "curl --fail -s -i -H \"Authorization: Basic $auth\" \"$resource\""` 
-	cookie=$(awk '/Set-Cookie: [^_]/{ print $2 }' <<< $res  | tr '\n' ' ')
+	cookie=$(awk 'tolower($0) ~ /set-cookie: [^_]/{ print $2 }' <<< $res  | tr '\n' ' ')
 	>&2 echo "< login"
 }
 

@@ -13,9 +13,9 @@ kubectl delete --cascade --ignore-not-found --now namespace sock-shop;
 retries=0
 deleted=false
 while  ! $deleted  && [ $retries -lt 5 ]; do 
-	[ "$retries" -eq "0" ] || sleep 30
+	[ "$retries" -eq "0" ] || sleep 10
 	kubectl get namespace sock-shop > /dev/null 2>&1 && ((++retries)) || deleted=true
-	$deleted || >&2 echo "$retries: $pods"
+	$deleted || >&2 echo "$retries: `kubectl get all -n sock-shop -o name | tr '\n' ' '`"
 done
 
 

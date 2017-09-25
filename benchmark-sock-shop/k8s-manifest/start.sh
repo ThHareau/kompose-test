@@ -14,8 +14,23 @@ while IFS='' read -r dep || [[ -n "$dep" ]]; do
 	kubectl rollout status -n sock-shop $dep 1>&2;
 done <<< `kubectl get deploy -n sock-shop -o 'name' `
 
+function wait_catalogue {
+	retry=0
+	failure=true
+	while $failure && [ "$retry" -lt "5" ]; do
+		res=$(curl -f -s `./get_ip.sh`/catalogue) &&
+			grep -q "error" <<< "$res" && 
+			failure=false || failure=true
+		$failure && 
+			>&2 echo "Waiting for DB to start" && 
+			sleep 15 && 
+			((++retry))
+
+	done	
+	$failure && return 1 || true
+}
 
 sleep 10
 curl -f -s -o /dev/null -w "%{http_code}" -H "Authorization: Basic dXNlcjpwYXNzd29yZA==" `./get_ip.sh`/login &&
-		curl -f -s -w "%{http_code}" -o /dev/null `./get_ip.sh `/catalogue ||
+		wait_catalogue ||
 		       		./restart.sh $((attempt + 1))

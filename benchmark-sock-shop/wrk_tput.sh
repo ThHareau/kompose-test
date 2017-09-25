@@ -88,8 +88,7 @@ for tgpt in "${throughput[@]}"; do
 
 	>&2 echo "$tgpt: launching wrk"
 	res=$(ssh -n $MANAGER "wrk -t2 -c100 -d120s -R$tgpt -H \"Cookie: $cookie\" -s /tmp/post.lua --latency http://$url/orders 2>&1") 
-	# latency="13456"
-	# std="564"
+	
 	>&2 echo "$tgpt: analysing result"
 	read latency std <<<  $( printf "%s" "$res"  | awk '/\#\[Mean/ {print $3 $6}'  | tr ",]" " " )
 	print_line $tgpt $latency $std

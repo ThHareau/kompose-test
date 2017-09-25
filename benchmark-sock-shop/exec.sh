@@ -3,7 +3,7 @@ set -e
 
 # tests are long. You may want to launch them on a dedicated machine, using nohup. To do so: 
 
-# nohup sh -c "./exec.sh bench thomas@hareau.eu ; csmail -s \"Benchmark finished with status $?\" nohup.out \"thomas@hareau.eu\""
+# nohup sh -c "./exec.sh bench thomas@hareau.eu ; csmail send -s \"Benchmark finished with status $?\" nohup.out \"thomas@hareau.eu\""
 
 BENCH=${1:-bench} # the machine from which running wrk2
 EMAIL=$2 # if present, csmail will be used to sent you an email
@@ -21,7 +21,7 @@ function launch {
 	mv res.txt "${master}-${cookie}.res"
 	if [[ -n $EMAIL ]]; then
 		csmail send -s "Bench ${master} for ${cookie} finished" "${master}-${cookie}.logs" "$EMAIL"
-	done
+	fi
 
 }
 
