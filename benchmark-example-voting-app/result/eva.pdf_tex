@@ -1,0 +1,89 @@
+%% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'eva.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{632.66896654bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.73886111)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{eva.pdf}}%
+    \put(0.03791361,0.05864469){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{-5000}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{eva.pdf}}%
+    \put(0.07608513,0.15407349){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{eva.pdf}}%
+    \put(0.03791361,0.2495023){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 5000}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{eva.pdf}}%
+    \put(0.02518977,0.34493111){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 10000}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{eva.pdf}}%
+    \put(0.02518977,0.44035991){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 15000}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{eva.pdf}}%
+    \put(0.02518977,0.5373788){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 20000}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{eva.pdf}}%
+    \put(0.02518977,0.6328084){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 25000}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{eva.pdf}}%
+    \put(0.02518977,0.7282372){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 30000}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{eva.pdf}}%
+    \put(0.08960418,0.03637876){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 10}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{eva.pdf}}%
+    \put(0.25660403,0.03637876){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 100}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{eva.pdf}}%
+    \put(0.42360563,0.03637876){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 1000}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{eva.pdf}}%
+    \put(0.59060564,0.03637876){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 10000}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{eva.pdf}}%
+    \put(0.75760566,0.03637876){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 100000}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{eva.pdf}}%
+    \put(0.93989009,0.0351854){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ 1x10}}}%
+    \put(0.99361789,0.04234237){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{6}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{eva.pdf}}%
+    \put(0.01087553,0.33856919){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lb]{\smash{latency (ms)}}}}%
+    \put(0.4267858,0.00297749){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{throughput (request/s)}}}%
+    \put(0.77589638,0.70756088){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{kubernetes}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{eva.pdf}}%
+    \put(0.8220199,0.68529416){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{swarm}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{eva.pdf}}%
+  \end{picture}%
+\endgroup%

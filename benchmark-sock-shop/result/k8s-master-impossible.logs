@@ -1,0 +1,154 @@
+The cluster will be reset! Sleeping 5 seconds to let you abort
+10 30 50 70 90 100 300 500 700 900 1000 3000 5000 7000 9000 10000 30000 50000 70000 90000 100000 300000 500000 700000 900000
+#Throughput	Latency	StdDeviation
+Starting test 10
+10: Reading cookie
+10: launching load test
+10: launching wrk
+10: analysing result
+        10	    14.595	    33.706
+Starting test 30
+30: Reading cookie
+30: launching load test
+30: launching wrk
+30: analysing result
+        30	     8.512	    23.671
+Starting test 50
+50: Reading cookie
+50: launching load test
+50: launching wrk
+50: analysing result
+Starting test 70
+        50	     7.318	     8.554
+70: Reading cookie
+70: launching load test
+70: launching wrk
+70: analysing result
+        70	     7.166	    21.939
+Starting test 90
+90: Reading cookie
+90: launching load test
+90: launching wrk
+90: analysing result
+Starting test 100
+        90	     5.922	    18.846
+100: Reading cookie
+100: launching load test
+100: launching wrk
+100: analysing result
+Starting test 300
+       100	     6.140	    20.284
+300: Reading cookie
+300: launching load test
+300: launching wrk
+300: analysing result
+Starting test 500
+       300	     5.317	    34.078
+500: Reading cookie
+500: launching load test
+500: launching wrk
+500: analysing result
+Starting test 700
+       500	   592.400	  1429.945
+700: Reading cookie
+700: launching load test
+700: launching wrk
+700: analysing result
+Starting test 900
+       700	 27859.968	 23366.126
+900: Reading cookie
+900: launching load test
+900: launching wrk
+900: analysing result
+Starting test 1000
+       900	  1261.047	  2811.778
+1000: Reading cookie
+1000: launching load test
+1000: launching wrk
+1000: analysing result
+Starting test 3000
+      1000	    26.837	   118.428
+3000: Reading cookie
+3000: launching load test
+3000: launching wrk
+3000: analysing result
+Starting test 5000
+      3000	    58.712	   169.698
+5000: Reading cookie
+5000: launching load test
+5000: launching wrk
+5000: analysing result
+      5000	  7677.028	  4154.147
+Starting test 7000
+7000: Reading cookie
+7000: launching load test
+7000: launching wrk
+7000: analysing result
+Starting test 9000
+      7000	 24763.796	 11309.502
+9000: Reading cookie
+9000: launching load test
+9000: launching wrk
+9000: analysing result
+      9000	 33013.345	 15727.933
+Starting test 10000
+10000: Reading cookie
+10000: launching load test
+10000: launching wrk
+10000: analysing result
+Starting test 30000
+     10000	 36030.478	 17323.408
+30000: Reading cookie
+30000: launching load test
+30000: launching wrk
+30000: analysing result
+Starting test 50000
+     30000	 55986.412	 26975.657
+50000: Reading cookie
+50000: launching load test
+50000: launching wrk
+50000: analysing result
+Starting test 70000
+     50000	 76777.214	 33693.851
+70000: Reading cookie
+70000: launching load test
+70000: launching wrk
+70000: analysing result
+Starting test 90000
+     70000	 61301.052	 29533.959
+90000: Reading cookie
+90000: launching load test
+90000: launching wrk
+90000: analysing result
+Starting test 100000
+     90000	 60677.203	 30690.745
+100000: Reading cookie
+100000: launching load test
+100000: launching wrk
+100000: analysing result
+Starting test 300000
+    100000	 61121.218	 30630.941
+300000: Reading cookie
+300000: launching load test
+300000: launching wrk
+300000: analysing result
+Starting test 500000
+    300000	 64382.094	 31163.818
+500000: Reading cookie
+500000: launching load test
+500000: launching wrk
+500000: analysing result
+Starting test 700000
+    500000	 70496.578	 31051.916
+700000: Reading cookie
+700000: launching load test
+700000: launching wrk
+700000: analysing result
+Starting test 900000
+    700000	 64554.095	 31548.685
+900000: Reading cookie
+900000: launching load test
+900000: launching wrk
+900000: analysing result
+    900000	 64644.223	 31193.950
+900000

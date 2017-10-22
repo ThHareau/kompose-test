@@ -4,6 +4,14 @@ The application is totally asynchronous. Therefore, it is very complicated to as
 
 * It could be possible to manage the performances of the application doing the following: sending n votes to the application, and looking how long it takes for the n votes are register in the result frontend. The process seems to be very slow, having small results is maybe difficult, but with an enough big number, it would be doable *
 
+## Installing the application
+
+To install the application: do the following: 
+
+```bash
+CLUSTER_TYPE=[kubernetes/swarm] ./install.sh <MANAGER_IP>
+```
+
 ## Launching the test
 
 This test does not reinstall the cluster (the application states does not change during the test, since we only send GET request to the vote frontend)
